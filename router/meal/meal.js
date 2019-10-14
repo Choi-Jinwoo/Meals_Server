@@ -50,6 +50,15 @@ module.exports = async (req, res) => {
                 }
             }
 
+            if (!Object.keys(breakfastList).length) {
+                breakfastList = null;
+            }
+            if (!Object.keys(lunchList).length) {
+                lunchList = null;
+            }
+            if (!Object.keys(dinnerList).length) {
+                dinnerList = null;
+            }
             const meals = { breakfastList, lunchList, dinnerList };
             colorConsole.green("급식정보를 조회하였습니다 school_id : " + school_id);
             return res.status(200).json({ status: 200, message: "급식정보를 조회하였습니다", data: { meals } });
