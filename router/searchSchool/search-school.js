@@ -1,3 +1,4 @@
+require('dotenv').config();
 const request = require("request");
 const colorConsole = require("../../lib/console");
 
