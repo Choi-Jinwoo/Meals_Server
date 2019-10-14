@@ -5,9 +5,10 @@ const meal = require("./router/meal");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/search-school", search_school);
 app.use("/meal", meal);
+app.use('/', (req, res) => { return res.send("Express Server") });
 
 app.listen(3000, () => {
     console.log("server is running at port 3000");
