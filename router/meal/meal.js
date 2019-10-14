@@ -1,5 +1,5 @@
+require('dotenv').config();
 const request = require("request");
-const neisInfo = require("../../config/neisInfo");
 const colorConsole = require("../../lib/console");
 const getToday = require("./getDate");
 const formatDate = require("./formatDate");
@@ -8,7 +8,7 @@ const removeSpecialChar = require("./removeSpecialChar");
 module.exports = async (req, res) => {
     const school_id = req.query.school_id;
     const office_id = req.query.office_id;
-    const key = neisInfo.key;
+    const { key } = process.env;
 
     let date = new Date();
 
