@@ -10,7 +10,7 @@ app.use("/search-school", search_school);
 app.use("/meal", meal);
 app.use('/', (req, res) => { return res.send("Express Server") });
 
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 
 app.listen(port, () => {
     console.log(process.env.port);
