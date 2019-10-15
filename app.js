@@ -13,5 +13,7 @@ app.use('/', (req, res) => { return res.send("Express Server") });
 const port = process.env.port || 3000;
 
 app.listen(port, () => {
+    console.log(process.env.port);
+    console.log(process.env.key);
     console.log(`SERVER is running at ${port}`);
 })
