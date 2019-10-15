@@ -10,6 +10,8 @@ app.use("/search-school", search_school);
 app.use("/meal", meal);
 app.use('/', (req, res) => { return res.send("Express Server") });
 
-app.listen(3000, () => {
-    console.log("server is running at port 3000");
+const port = process.env.port || 3000;
+
+app.listen(port, () => {
+    console.log("server is running at port " + port);
 })
