@@ -1,9 +1,10 @@
 require('dotenv').config();
 const request = require("request");
 const colorConsole = require("../../lib/console");
+const neisInfo = require('../../config/neisInfo');
 
 module.exports = async (req, res) => {
-    const { key } = process.env;
+    const { key } = neisInfo;
     const school_name = req.query.school_name;
     const url = `http://open.neis.go.kr/hub/schoolInfo?SCHUL_NM=${encodeURI(school_name)}&Type=json&KEY=${key}&pSize=800`;
     let schoolList;

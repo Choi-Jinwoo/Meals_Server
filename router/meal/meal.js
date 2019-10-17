@@ -4,11 +4,12 @@ const colorConsole = require("../../lib/console");
 const getToday = require("./getDate");
 const formatDate = require("./formatDate");
 const removeSpecialChar = require("./removeSpecialChar");
+const neisInfo = require('../../config/neisInfo');
 
 module.exports = async (req, res) => {
     const school_id = req.query.school_id;
     const office_id = req.query.office_id;
-    const { key } = process.env;
+    const { key } = neisInfo;
 
     let date = new Date();
 

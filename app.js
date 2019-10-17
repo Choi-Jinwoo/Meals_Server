@@ -14,6 +14,5 @@ const port = process.env.port || 8080;
 
 app.listen(port, () => {
     console.log(process.env.port);
-    console.log(process.env.key);
     console.log(`SERVER is running at ${port}`);
 })
