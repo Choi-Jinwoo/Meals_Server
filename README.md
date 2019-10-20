@@ -1,9 +1,9 @@
 # Meals_Server
 급식 조회(server)
 
-##config
+## config
 
-*neisInfo.js
+* neisInfo.js
 ```
 module.exports = {
   key: 'NEISKEY'
