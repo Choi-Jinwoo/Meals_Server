@@ -5,7 +5,7 @@
 
 ### neisInfo.js
 >```
- module.exports = {
-   key: 'NEISKEY'
- }
- ```
+>module.exports = {
+>  key: 'NEISKEY'
+>}
+>```
