@@ -3,9 +3,9 @@
 
 ## config
 
-* neisInfo.js
-```
-module.exports = {
-  key: 'NEISKEY'
-}
-```
+### neisInfo.js
+>```
+ module.exports = {
+   key: 'NEISKEY'
+ }
+ ```
