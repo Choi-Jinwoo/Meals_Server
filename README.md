@@ -9,3 +9,8 @@
 >  key: 'NEISKEY'
 >}
 >```
+
+## start
+>```
+>yarn start
+>```
