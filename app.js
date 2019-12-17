@@ -1,4 +1,3 @@
-require('whatap').NodeAgent;
 const express = require('express');
 const bodyParser = require('body-parser');
 const search_school = require('./router/searchSchool');
