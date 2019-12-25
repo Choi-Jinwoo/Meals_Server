@@ -75,7 +75,7 @@ exports.getMeals = async (req, res) => {
     }
   }
 
-  // 급식이 없는곳 ""로 초기화
+  // 급식이 없는곳 ''로 초기화
   for (let i = 0; i < 3; i++) {
     if (!yesterdayMeal[i]) {
       yesterdayMeal[i] = null;

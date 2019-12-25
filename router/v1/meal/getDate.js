@@ -1,4 +1,4 @@
-const formatDate = require("./formatDate");
+const formatDate = require('./formatDate');
 
 module.exports = () => {
   const yyyy = new Date().getFullYear();

@@ -1,4 +1,4 @@
-const colorConsole = require("../../../lib/console");
+const colorConsole = require('../../../lib/console');
 
 module.exports = (data) => {
   try {
@@ -8,6 +8,6 @@ module.exports = (data) => {
       return data;
     }
   } catch (err) {
-    colorConsole.red("날짜를 포맷하는중 오류가 발생하였습니다\n" + err);
+    colorConsole.red('날짜를 포맷하는중 오류가 발생하였습니다\n' + err);
   }
 }

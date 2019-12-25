@@ -1,9 +1,9 @@
 require('dotenv').config();
-const request = require("request");
-const colorConsole = require("../../../lib/console");
-const getToday = require("./getDate");
-const formatDate = require("./formatDate");
-const removeSpecialChar = require("./removeSpecialChar");
+const request = require('request');
+const colorConsole = require('../../../lib/console');
+const getToday = require('./getDate');
+const formatDate = require('./formatDate');
+const removeSpecialChar = require('./removeSpecialChar');
 const neisInfo = require('../../../config/neisInfo');
 
 module.exports = async (req, res) => {
@@ -20,16 +20,16 @@ module.exports = async (req, res) => {
   try {
     await request(url, (err, response, mealInfo) => {
       if (err) {
-        colorConsole.red("급식조회중 오류가 발생하였습니다\n" + err);
-        return res.status(500).json({ status: 500, message: "급식 조회중 오류가 발생하였습니다" });
+        colorConsole.red('급식조회중 오류가 발생하였습니다\n' + err);
+        return res.status(500).json({ status: 500, message: '급식 조회중 오류가 발생하였습니다' });
       }
 
       mealInfo = JSON.parse(mealInfo);
 
       if (mealInfo.RESULT != undefined) {
-        if (mealInfo.RESULT.CODE === "INFO-200") { //학교 정보가 없을경우 false반환
-          colorConsole.yellow("급식 대한 정보가 없습니다 school_id : " + school_id);
-          return res.status(404).json({ status: 404, message: "급식 대한 정보가 없습니다" });
+        if (mealInfo.RESULT.CODE === 'INFO-200') { //학교 정보가 없을경우 false반환
+          colorConsole.yellow('급식 대한 정보가 없습니다 school_id : ' + school_id);
+          return res.status(404).json({ status: 404, message: '급식 대한 정보가 없습니다' });
         }
       }
       // MEAL_SC_CODE 조식, 중식, 석식 구분
@@ -42,11 +42,11 @@ module.exports = async (req, res) => {
       let dinnerList = {};
 
       for (let i = 0; i < mealInfo.length; i++) {
-        if (mealInfo[i].MMEAL_SC_CODE === "1") {
+        if (mealInfo[i].MMEAL_SC_CODE === '1') {
           breakfastList = mealInfo[i].DDISH_NM;
-        } else if (mealInfo[i].MMEAL_SC_CODE === "2") {
+        } else if (mealInfo[i].MMEAL_SC_CODE === '2') {
           lunchList = mealInfo[i].DDISH_NM;
-        } else if (mealInfo[i].MMEAL_SC_CODE === "3") {
+        } else if (mealInfo[i].MMEAL_SC_CODE === '3') {
           dinnerList = mealInfo[i].DDISH_NM;
         }
       }
@@ -61,11 +61,11 @@ module.exports = async (req, res) => {
         dinnerList = null;
       }
       const meals = { breakfastList, lunchList, dinnerList };
-      colorConsole.green("급식정보를 조회하였습니다 school_id : " + school_id);
-      return res.status(200).json({ status: 200, message: "급식정보를 조회하였습니다", data: { meals } });
+      colorConsole.green('급식정보를 조회하였습니다 school_id : ' + school_id);
+      return res.status(200).json({ status: 200, message: '급식정보를 조회하였습니다', data: { meals } });
     })
   } catch (err) {
-    colorConsole.red("급식정보 조회중 오류가 발생하였습니다\n" + err);
-    return res.status(500).json({ status: 500, message: "급식정보 조회중 오류가 발생하였습니다" });
+    colorConsole.red('급식정보 조회중 오류가 발생하였습니다\n' + err);
+    return res.status(500).json({ status: 500, message: '급식정보 조회중 오류가 발생하였습니다' });
   }
 }

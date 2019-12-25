@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const meal = require("./meal/meal");
+const meal = require('./meal/meal');
 
-router.get("/");
+router.get('/');
 
 module.exports = router;

@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/search-school', search_school);
-app.use('/v1', v1);
+app.use('/', v1);
 app.use('/v2', v2)
 app.use('/', (req, res) => { return res.send('Express Server') });
 
