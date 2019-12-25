@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/search-school', search_school);
 app.use('/', v1);
 app.use('/v2', v2)
-app.use('/', (req, res) => { return res.send('Express Server') });
 
 const port = process.env.port || 8080;
 
