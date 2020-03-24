@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const search_school = require('./router/searchSchool');
 const v1 = require('./router/v1');
 const v2 = require('./router/v2');
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/search-school', search_school);
